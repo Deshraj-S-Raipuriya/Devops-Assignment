@@ -1,0 +1,10 @@
+global:
+  scrape_interval: 15s
+scrape_configs:
+  - job_name: 'flask-app'
+    static_configs:
+      - targets: ['<pod_ip>:8000']
+•	Install Prometheus in cluster (Minikube):
+kubectl apply -f prometheus-config.yaml
+kubectl apply -f prometheus-deployment.yaml
+kubectl apply -f prometheus-service.yaml
